@@ -1,1 +1,1 @@
-export const TEST = 'TEST 1.4';
+export const TEST = 'TEST 1.6';
