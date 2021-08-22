@@ -6,7 +6,7 @@ export interface PublicUser {
 export interface User extends PublicUser  {
     email?: string
     password?: string
-    createdAt: string
+    createdAt: Date
     active: boolean
     version: number
 }
