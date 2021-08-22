@@ -1,8 +1,9 @@
 export interface Gamebook {
-    id: String
-    title: String
-    description: String
-    authorId: String
-    imageSrc: String
-    price: Number
+    id: string
+    title: string
+    description: string
+    authorId: string
+    imageSrc: string
+    price: number,
+    version?: number
 }

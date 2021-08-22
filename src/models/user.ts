@@ -1,11 +1,12 @@
 export interface PublicUser {
-    id: String
-    fullName: String
+    id: string
+    fullName: string
 }
 
 export interface User extends PublicUser  {
-    email?: String
-    password?: String
-    createdAt: String
-    active: Boolean
+    email?: string
+    password?: string
+    createdAt: string
+    active: boolean
+    version: number
 }
