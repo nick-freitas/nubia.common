@@ -8,5 +8,4 @@ export interface User extends PublicUser  {
     password?: String
     createdAt: String
     active: Boolean
-    v: Number
 }
