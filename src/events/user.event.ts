@@ -1,5 +1,5 @@
 import { User } from '../models';
-import { UserEventType } from './users.event-types';
+import { UserEventType } from './user.event-types';
 
 export interface UserEvent {
     type: UserEventType,
