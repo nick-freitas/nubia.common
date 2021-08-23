@@ -15,6 +15,7 @@ export interface CreateUserEvent extends UserEvent {
         password: string,
     }
 }
+export const isCreateUserEvent = (e: UserEvent): e is CreateUserEvent => e.type === UserEventType.CREATE_USER
 
 export interface UpdateUserEvent extends UserEvent {
     type: UserEventType.UPDATE_USER,
@@ -23,3 +24,4 @@ export interface UpdateUserEvent extends UserEvent {
         fullname: string,
     }
 }
+export const isUpdateUserEvent = (e: UserEvent): e is UpdateUserEvent => e.type === UserEventType.UPDATE_USER
