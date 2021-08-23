@@ -25,3 +25,22 @@ export interface UpdateUserEvent extends UserEvent {
     }
 }
 export const isUpdateUserEvent = (e: UserEvent): e is UpdateUserEvent => e.type === UserEventType.UPDATE_USER
+
+export interface UserCreatedEvent extends UserEvent {
+    type: UserEventType.USER_CREATED,
+    data: {
+        id: string,
+        fullname: string,
+        email: string,
+    }
+}
+export const isUserCreatedEvent = (e: UserEvent): e is UserCreatedEvent => e.type === UserEventType.USER_CREATED
+
+export interface UserUpdatedEvent extends UserEvent {
+    type: UserEventType.USER_UPDATED,
+    data: {
+        id: string,
+        fullname: string,
+    }
+}
+export const isUserUpdatedEvent = (e: UserEvent): e is UserUpdatedEvent => e.type === UserEventType.USER_UPDATED
