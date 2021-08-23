@@ -4,9 +4,9 @@ export interface PublicUser {
 }
 
 export interface User extends PublicUser  {
-    email?: string
+    email: string
     password?: string
-    createdAt: Date
-    active: boolean
+    createdAt?: Date
+    active?: boolean
     version: number
 }
