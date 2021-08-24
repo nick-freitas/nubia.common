@@ -21,7 +21,7 @@ export interface UpdateUserEvent extends UserEvent {
     type: UserEventType.UPDATE_USER,
     data: {
         id: string,
-        fullname: string,
+        fullname?: string,
     }
 }
 export const isUpdateUserEvent = (e: UserEvent): e is UpdateUserEvent => e.type === UserEventType.UPDATE_USER
@@ -32,6 +32,7 @@ export interface UserCreatedEvent extends UserEvent {
         id: string,
         fullname: string,
         email: string,
+        version: number
     }
 }
 export const isUserCreatedEvent = (e: UserEvent): e is UserCreatedEvent => e.type === UserEventType.USER_CREATED
@@ -41,6 +42,7 @@ export interface UserUpdatedEvent extends UserEvent {
     data: {
         id: string,
         fullname: string,
+        version: number
     }
 }
 export const isUserUpdatedEvent = (e: UserEvent): e is UserUpdatedEvent => e.type === UserEventType.USER_UPDATED
