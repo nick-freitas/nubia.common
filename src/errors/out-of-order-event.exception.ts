@@ -1,4 +1,4 @@
-import { EventType } from '../events';
+import { EventType } from '../events/event-type';
 import { BadRequestException } from './bad-request.exception';
 
 export class OutOfOrderEventException extends BadRequestException {
