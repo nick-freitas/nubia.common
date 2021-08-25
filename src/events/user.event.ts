@@ -1,7 +1,8 @@
 import { User } from '../models';
+import { NubiaEvent } from './event';
 import { UserEventType } from './user.event-types';
 
-export interface UserEvent {
+export interface UserEvent extends NubiaEvent {
     type: UserEventType,
     data: Partial<User>
 }
@@ -15,7 +16,7 @@ export interface CreateUserEvent extends UserEvent {
         password: string,
     }
 }
-export const isCreateUserEvent = (e: UserEvent): e is CreateUserEvent => e.type === UserEventType.CREATE_USER
+export const isCreateUserEvent = (e: NubiaEvent): e is CreateUserEvent => e.type === UserEventType.CREATE_USER
 
 export interface UpdateUserEvent extends UserEvent {
     type: UserEventType.UPDATE_USER,
@@ -24,7 +25,7 @@ export interface UpdateUserEvent extends UserEvent {
         fullName?: string,
     }
 }
-export const isUpdateUserEvent = (e: UserEvent): e is UpdateUserEvent => e.type === UserEventType.UPDATE_USER
+export const isUpdateUserEvent = (e: NubiaEvent): e is UpdateUserEvent => e.type === UserEventType.UPDATE_USER
 
 export interface UserCreatedEvent extends UserEvent {
     type: UserEventType.USER_CREATED,
@@ -35,7 +36,7 @@ export interface UserCreatedEvent extends UserEvent {
         version: number
     }
 }
-export const isUserCreatedEvent = (e: UserEvent): e is UserCreatedEvent => e.type === UserEventType.USER_CREATED
+export const isUserCreatedEvent = (e: NubiaEvent): e is UserCreatedEvent => e.type === UserEventType.USER_CREATED
 
 export interface UserUpdatedEvent extends UserEvent {
     type: UserEventType.USER_UPDATED,
@@ -45,4 +46,4 @@ export interface UserUpdatedEvent extends UserEvent {
         version: number
     }
 }
-export const isUserUpdatedEvent = (e: UserEvent): e is UserUpdatedEvent => e.type === UserEventType.USER_UPDATED
+export const isUserUpdatedEvent = (e: NubiaEvent): e is UserUpdatedEvent => e.type === UserEventType.USER_UPDATED

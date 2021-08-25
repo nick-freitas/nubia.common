@@ -1,7 +1,8 @@
 import { Gamebook } from '../models';
+import { NubiaEvent } from './event';
 import { GamebookEventType } from './gamebook.event-types';
 
-export interface GamebookEvent {
+export interface GamebookEvent extends NubiaEvent {
     type: GamebookEventType,
     data: Partial<Gamebook>
 }
@@ -16,7 +17,7 @@ export interface CreateGamebookEvent extends GamebookEvent {
         imageSrc?: string
     }
 }
-export const isCreateGamebookEvent = (e: GamebookEvent): e is CreateGamebookEvent => e.type === GamebookEventType.CREATE_GAMEBOOK
+export const isCreateGamebookEvent = (e: NubiaEvent): e is CreateGamebookEvent => e.type === GamebookEventType.CREATE_GAMEBOOK
 
 export interface UpdateGamebookEvent extends GamebookEvent {
     type: GamebookEventType.UPDATE_GAMEBOOK,
@@ -28,7 +29,7 @@ export interface UpdateGamebookEvent extends GamebookEvent {
         imageSrc?: string
     }
 }
-export const isUpdateGamebookEvent = (e: GamebookEvent): e is UpdateGamebookEvent => e.type === GamebookEventType.UPDATE_GAMEBOOK
+export const isUpdateGamebookEvent = (e: NubiaEvent): e is UpdateGamebookEvent => e.type === GamebookEventType.UPDATE_GAMEBOOK
 
 export interface GamebookCreatedEvent extends GamebookEvent {
     type: GamebookEventType.GAMEBOOK_CREATED,
@@ -41,7 +42,7 @@ export interface GamebookCreatedEvent extends GamebookEvent {
         version: number
     }
 }
-export const isGamebookCreatedEvent = (e: GamebookEvent): e is GamebookCreatedEvent => e.type === GamebookEventType.GAMEBOOK_CREATED
+export const isGamebookCreatedEvent = (e: NubiaEvent): e is GamebookCreatedEvent => e.type === GamebookEventType.GAMEBOOK_CREATED
 
 export interface GamebookUpdatedEvent extends GamebookEvent {
     type: GamebookEventType.GAMEBOOK_UPDATED,
@@ -54,7 +55,7 @@ export interface GamebookUpdatedEvent extends GamebookEvent {
         version: number
     }
 }
-export const isGamebookUpdatedEvent = (e: GamebookEvent): e is GamebookUpdatedEvent => e.type === GamebookEventType.GAMEBOOK_UPDATED
+export const isGamebookUpdatedEvent = (e: NubiaEvent): e is GamebookUpdatedEvent => e.type === GamebookEventType.GAMEBOOK_UPDATED
 
 
 export interface ResetGamebookChoiceEvent extends GamebookEvent {
@@ -63,7 +64,7 @@ export interface ResetGamebookChoiceEvent extends GamebookEvent {
         id: string,
     }
 }
-export const isResetGamebookChoiceEvent = (e: GamebookEvent): e is ResetGamebookChoiceEvent => e.type === GamebookEventType.RESET_GAMEBOOK_CHOICES
+export const isResetGamebookChoiceEvent = (e: NubiaEvent): e is ResetGamebookChoiceEvent => e.type === GamebookEventType.RESET_GAMEBOOK_CHOICES
 
 export interface UndoLastGamebookChoiceEvent extends GamebookEvent {
     type: GamebookEventType.UNDO_LAST_GAMEBOOK_CHOICE,
@@ -71,7 +72,7 @@ export interface UndoLastGamebookChoiceEvent extends GamebookEvent {
         id: string
     }
 }
-export const isUndoLastGamebookChoiceEvent = (e: GamebookEvent): e is UndoLastGamebookChoiceEvent => e.type === GamebookEventType.UNDO_LAST_GAMEBOOK_CHOICE
+export const isUndoLastGamebookChoiceEvent = (e: NubiaEvent): e is UndoLastGamebookChoiceEvent => e.type === GamebookEventType.UNDO_LAST_GAMEBOOK_CHOICE
 
 export interface MakeGamebookChoiceEvent extends GamebookEvent {
     type: GamebookEventType.MAKE_GAMEBOOK_CHOICE,
@@ -80,4 +81,4 @@ export interface MakeGamebookChoiceEvent extends GamebookEvent {
         progressionId: string
     }
 }
-export const isMakeGamebookChoiceEvent = (e: GamebookEvent): e is MakeGamebookChoiceEvent => e.type === GamebookEventType.MAKE_GAMEBOOK_CHOICE
+export const isMakeGamebookChoiceEvent = (e: NubiaEvent): e is MakeGamebookChoiceEvent => e.type === GamebookEventType.MAKE_GAMEBOOK_CHOICE
