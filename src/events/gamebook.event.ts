@@ -12,6 +12,7 @@ export interface CreateGamebookEvent extends GamebookEvent {
   data: {
     id: string;
     title: string;
+    authorId: string;
     description?: string;
     price?: number;
     imageSrc?: string;
