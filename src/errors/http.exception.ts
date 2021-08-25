@@ -1,14 +1,13 @@
-// https://github.com/nestjs/nest/blob/7956564f40799b3f8a70b4c0be4c6a8ba8244c47/packages/common/utils/shared.utils.ts#L5 
-const isUndefined = (obj: any): obj is undefined =>
-  typeof obj === 'undefined';
-  
+// https://github.com/nestjs/nest/blob/7956564f40799b3f8a70b4c0be4c6a8ba8244c47/packages/common/utils/shared.utils.ts#L5
+const isUndefined = (obj: any): obj is undefined => typeof obj === "undefined";
+
 const isNil = (obj: any): obj is null | undefined =>
   isUndefined(obj) || obj === null;
-  
-const isObject = (fn: any): fn is object =>
-  !isNil(fn) && typeof fn === 'object';
 
-const isString = (fn: any): fn is string => typeof fn === 'string';
+const isObject = (fn: any): fn is object =>
+  !isNil(fn) && typeof fn === "object";
+
+const isString = (fn: any): fn is string => typeof fn === "string";
 
 /**
  * Defines the base Nest HTTP exception, which is handled by the default
@@ -46,7 +45,7 @@ export class HttpException extends Error {
    */
   constructor(
     private readonly response: string | Record<string, any>,
-    private readonly status: number,
+    private readonly status: number
   ) {
     super();
     this.initMessage();
@@ -64,7 +63,7 @@ export class HttpException extends Error {
     } else if (this.constructor) {
       this.message = (this.constructor as any).name
         .match(/[A-Z][a-z]+|[0-9]+/g)
-        .join(' ');
+        .join(" ");
     }
   }
 
@@ -83,7 +82,7 @@ export class HttpException extends Error {
   public static createBody(
     objectOrError: object | string,
     description?: string,
-    statusCode?: number,
+    statusCode?: number
   ) {
     if (!objectOrError) {
       return { statusCode, message: description };

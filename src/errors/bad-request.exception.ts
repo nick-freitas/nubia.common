@@ -1,5 +1,5 @@
-import { HttpStatus } from '../util/http-status';
-import { HttpException } from './http.exception';
+import { HttpStatus } from "../util/http-status";
+import { HttpException } from "./http.exception";
 
 /**
  * Defines an HTTP exception for *Bad Request* type errors.
@@ -35,15 +35,15 @@ export class BadRequestException extends HttpException {
    */
   constructor(
     objectOrError?: string | object | any,
-    description = 'Bad Request',
+    description = "Bad Request"
   ) {
     super(
       HttpException.createBody(
         objectOrError,
         description,
-        HttpStatus.BAD_REQUEST,
+        HttpStatus.BAD_REQUEST
       ),
-      HttpStatus.BAD_REQUEST,
+      HttpStatus.BAD_REQUEST
     );
   }
 }

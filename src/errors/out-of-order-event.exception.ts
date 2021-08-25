@@ -1,8 +1,7 @@
-import { EventType } from '../events/event-type';
-import { BadRequestException } from './bad-request.exception';
+import { EventType } from "../events/event-type";
+import { BadRequestException } from "./bad-request.exception";
 
 export class OutOfOrderEventException extends BadRequestException {
-  
   constructor(
     eventType: EventType,
     expectedVersion: number,
@@ -10,7 +9,7 @@ export class OutOfOrderEventException extends BadRequestException {
   ) {
     super(
       `${eventType} - Expected Version ${expectedVersion} but got ${actualVersion} instead`,
-      "Out of Order Event Exception",
+      "Out of Order Event Exception"
     );
   }
 }

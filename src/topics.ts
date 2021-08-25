@@ -1,4 +1,4 @@
 export enum Topics {
-    GAMEBOOKS = 'gamebooks',
-    USERS= 'users'
+  GAMEBOOKS = "gamebooks",
+  USERS = "users",
 }
