@@ -51,3 +51,23 @@ export interface UserUpdatedEvent extends UserEvent {
 }
 export const isUserUpdatedEvent = (e: NubiaEvent): e is UserUpdatedEvent =>
   e.type === UserEventType.USER_UPDATED;
+
+export interface SignInUserEvent extends UserEvent {
+  type: UserEventType.SIGN_IN_USER;
+  data: {
+    username: string;
+    password: string;
+  };
+}
+export const isSignInUserEvent = (e: NubiaEvent): e is SignInUserEvent =>
+  e.type === UserEventType.SIGN_IN_USER;
+
+export interface SignOutUserEvent extends UserEvent {
+  type: UserEventType.SIGN_OUT_USER;
+  data: {
+    username: string;
+    password: string;
+  };
+}
+export const isSignOutUserEvent = (e: NubiaEvent): e is SignOutUserEvent =>
+  e.type === UserEventType.SIGN_OUT_USER;
