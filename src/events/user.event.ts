@@ -1,10 +1,10 @@
-import { User } from "../models";
+import { AuthorizedUser } from "../models";
 import { NubiaEvent } from "./event";
 import { UserEventType } from "./user.event-types";
 
 export interface UserEvent extends NubiaEvent {
   type: UserEventType;
-  data: Partial<User>;
+  data: Partial<AuthorizedUser>;
 }
 
 export interface CreateUserEvent extends UserEvent {
@@ -55,7 +55,7 @@ export const isUserUpdatedEvent = (e: NubiaEvent): e is UserUpdatedEvent =>
 export interface SignInUserEvent extends UserEvent {
   type: UserEventType.SIGN_IN_USER;
   data: {
-    username: string;
+    email: string;
     password: string;
   };
 }
@@ -65,8 +65,7 @@ export const isSignInUserEvent = (e: NubiaEvent): e is SignInUserEvent =>
 export interface SignOutUserEvent extends UserEvent {
   type: UserEventType.SIGN_OUT_USER;
   data: {
-    username: string;
-    password: string;
+    access_token: string;
   };
 }
 export const isSignOutUserEvent = (e: NubiaEvent): e is SignOutUserEvent =>
