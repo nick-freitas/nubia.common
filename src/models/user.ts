@@ -12,5 +12,5 @@ export interface User extends PublicUser {
 }
 
 export interface AuthorizedUser extends User {
-  auth_token: string;
+  access_token: string;
 }
