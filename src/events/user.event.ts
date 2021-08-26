@@ -64,9 +64,7 @@ export const isSignInUserEvent = (e: NubiaEvent): e is SignInUserEvent =>
 
 export interface SignOutUserEvent extends UserEvent {
   type: UserEventType.SIGN_OUT_USER;
-  data: {
-    access_token: string;
-  };
+  data: {};
 }
 export const isSignOutUserEvent = (e: NubiaEvent): e is SignOutUserEvent =>
   e.type === UserEventType.SIGN_OUT_USER;
