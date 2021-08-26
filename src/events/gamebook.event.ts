@@ -100,3 +100,12 @@ export const isMakeGamebookChoiceEvent = (
   e: NubiaEvent
 ): e is MakeGamebookChoiceEvent =>
   e.type === GamebookEventType.MAKE_GAMEBOOK_CHOICE;
+
+export interface GetGamebookEvent extends GamebookEvent {
+  type: GamebookEventType.GET_GAMEBOOK;
+  data: {
+    id: string;
+  };
+}
+export const isGetGamebookEvent = (e: NubiaEvent): e is GetGamebookEvent =>
+  e.type === GamebookEventType.GET_GAMEBOOK;
