@@ -3,5 +3,9 @@ import { EventType } from "./event-type";
 export interface NubiaEvent {
   type: EventType;
   data: any;
-  access_token?: string;
+  auth?: {
+    access_token?: string;
+    userId: string;
+    exp: number;
+  };
 }
