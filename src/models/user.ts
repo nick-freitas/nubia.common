@@ -10,3 +10,7 @@ export interface User extends PublicUser {
   active?: boolean;
   version: number;
 }
+
+export interface AuthorizedUser extends User {
+  auth_token: string;
+}
