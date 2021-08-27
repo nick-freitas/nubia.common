@@ -9,7 +9,6 @@ export interface ReadingSessionEvent extends NubiaEvent {
 export interface ResetChoicesEvent extends ReadingSessionEvent {
   type: ReadingSessionEventType.RESET_CHOICES;
   data: {
-    userId: string;
     gamebookId: string;
   };
 }
@@ -19,7 +18,6 @@ export const isResetChoicesEvent = (e: NubiaEvent): e is ResetChoicesEvent =>
 export interface UndoChoiceEvent extends ReadingSessionEvent {
   type: ReadingSessionEventType.UNDO_CHOICE;
   data: {
-    userId: string;
     gamebookId: string;
   };
 }
@@ -29,7 +27,6 @@ export const isUndoChoiceEvent = (e: NubiaEvent): e is UndoChoiceEvent =>
 export interface MakeChoiceEvent extends ReadingSessionEvent {
   type: ReadingSessionEventType.MAKE_CHOICE;
   data: {
-    userId: string;
     gamebookId: string;
   };
 }
