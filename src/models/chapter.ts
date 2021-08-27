@@ -5,4 +5,5 @@ export interface Chapter {
   isEndingChapter: boolean;
   title: string;
   content: string;
+  version: number;
 }

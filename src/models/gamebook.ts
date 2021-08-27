@@ -5,5 +5,5 @@ export interface Gamebook {
   authorId: string;
   imageSrc?: string;
   price?: number;
-  version?: number;
+  version: number;
 }

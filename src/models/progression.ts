@@ -4,4 +4,5 @@ export interface Progression {
   descriptor: string;
   sourceChapterId: string;
   destinationChapterId: string;
+  version: number;
 }
