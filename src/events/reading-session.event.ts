@@ -1,3 +1,4 @@
+import { Progression } from "../models";
 import { NubiaEvent } from "./event";
 import { ReadingSessionEventType } from "./reading-session.event-types";
 
@@ -28,7 +29,7 @@ export interface MakeChoiceEvent extends ReadingSessionEvent {
   type: ReadingSessionEventType.MAKE_CHOICE;
   data: {
     gamebookId: string;
-    progressionId: string;
+    progression: Progression;
   };
 }
 export const isMakeChoiceEvent = (e: NubiaEvent): e is MakeChoiceEvent =>
