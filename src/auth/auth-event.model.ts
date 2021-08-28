@@ -4,5 +4,5 @@ export interface AuthEventModel {
   access_token?: string;
   userId: string;
   exp: number;
-  role: AuthRoles[];
+  roles: AuthRoles[];
 }
