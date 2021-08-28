@@ -4,7 +4,6 @@ import { UserEventType } from "./user.event-types";
 
 export interface UserEvent extends NubiaEvent {
   type: UserEventType;
-  data: Partial<AuthorizedUser>;
 }
 
 export interface CreateUserEvent extends UserEvent {

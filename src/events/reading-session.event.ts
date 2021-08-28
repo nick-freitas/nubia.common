@@ -4,7 +4,6 @@ import { ReadingSessionEventType } from "./reading-session.event-types";
 
 export interface ReadingSessionEvent extends NubiaEvent {
   type: ReadingSessionEventType;
-  data: any;
 }
 
 export interface ResetChoicesEvent extends ReadingSessionEvent {

@@ -4,7 +4,6 @@ import { GamebookEventType } from "./gamebook.event-types";
 
 export interface GamebookEvent extends NubiaEvent {
   type: GamebookEventType;
-  data: Partial<Gamebook>;
 }
 
 export interface CreateGamebookEvent extends GamebookEvent {

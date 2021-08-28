@@ -3,7 +3,6 @@ import { LibraryEventType } from "./library.event-types";
 
 export interface LibraryEvent extends NubiaEvent {
   type: LibraryEventType;
-  data: any;
 }
 
 export interface GetUserLibraryEvent extends LibraryEvent {
