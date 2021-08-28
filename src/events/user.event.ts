@@ -1,4 +1,3 @@
-import { AuthorizedUser } from "../models";
 import { NubiaEvent } from "./event";
 import { UserEventType } from "./user.event-types";
 
