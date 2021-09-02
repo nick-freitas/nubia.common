@@ -3,5 +3,4 @@ export interface Choice {
   previousChapterId: string;
   progressionTakenId: string;
   createdAt: Date;
-  version: number;
 }
