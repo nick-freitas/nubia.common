@@ -47,7 +47,7 @@ export interface UserUpdatedEvent extends UserEvent {
     id: string;
     fullName: string;
     version: number;
-    roles: AuthRoles;
+    roles: AuthRoles[];
   };
 }
 export const isUserUpdatedEvent = (e: NubiaEvent): e is UserUpdatedEvent =>
