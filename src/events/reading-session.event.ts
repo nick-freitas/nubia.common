@@ -28,7 +28,7 @@ export interface MakeChoiceEvent extends ReadingSessionEvent {
   type: ReadingSessionEventType.MAKE_CHOICE;
   data: {
     gamebookId: string;
-    progression: Progression;
+    progressionId: string;
   };
 }
 export const isMakeChoiceEvent = (e: NubiaEvent): e is MakeChoiceEvent =>
