@@ -1,3 +1,4 @@
+import { AuthRoles } from "../auth/auth-roles";
 import { NubiaEvent } from "./event";
 import { UserEventType } from "./user.event-types";
 
@@ -34,6 +35,7 @@ export interface UserCreatedEvent extends UserEvent {
     fullName: string;
     email: string;
     version: number;
+    roles: AuthRoles;
   };
 }
 export const isUserCreatedEvent = (e: NubiaEvent): e is UserCreatedEvent =>
@@ -45,6 +47,7 @@ export interface UserUpdatedEvent extends UserEvent {
     id: string;
     fullName: string;
     version: number;
+    roles: AuthRoles;
   };
 }
 export const isUserUpdatedEvent = (e: NubiaEvent): e is UserUpdatedEvent =>
