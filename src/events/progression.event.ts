@@ -28,7 +28,7 @@ export interface UpdateProgressionEvent extends ProgressionEvent {
     descriptor: string;
     sourceChapterId: string;
     destinationChapterId: string;
-    version: string;
+    version: number;
   };
 }
 export const isUpdateProgressionEvent = (
@@ -44,7 +44,7 @@ export interface ProgressionCreatedEvent extends ProgressionEvent {
     descriptor: string;
     sourceChapterId: string;
     destinationChapterId: string;
-    version: string;
+    version: number;
   };
 }
 export const isProgressionCreatedEvent = (
@@ -60,7 +60,7 @@ export interface ProgressionUpdatedEvent extends ProgressionEvent {
     descriptor: string;
     sourceChapterId: string;
     destinationChapterId: string;
-    version: string;
+    version: number;
   };
 }
 export const isProgressionUpdatedEvent = (
