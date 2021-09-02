@@ -7,7 +7,13 @@ export interface ProgressionEvent extends NubiaEvent {
 
 export interface CreateProgressionEvent extends ProgressionEvent {
   type: ProgressionEventType.CREATE_PROGRESSION;
-  data: {};
+  data: {
+    id: string;
+    name: string;
+    descriptor: string;
+    sourceChapterId: string;
+    destinationChapterId: string;
+  };
 }
 export const isCreateProgressionEvent = (
   e: NubiaEvent
@@ -16,7 +22,14 @@ export const isCreateProgressionEvent = (
 
 export interface UpdateProgressionEvent extends ProgressionEvent {
   type: ProgressionEventType.UPDATE_PROGRESSION;
-  data: {};
+  data: {
+    id: string;
+    name: string;
+    descriptor: string;
+    sourceChapterId: string;
+    destinationChapterId: string;
+    version: string;
+  };
 }
 export const isUpdateProgressionEvent = (
   e: NubiaEvent
@@ -25,7 +38,14 @@ export const isUpdateProgressionEvent = (
 
 export interface ProgressionCreatedEvent extends ProgressionEvent {
   type: ProgressionEventType.PROGRESSION_CREATED;
-  data: {};
+  data: {
+    id: string;
+    name: string;
+    descriptor: string;
+    sourceChapterId: string;
+    destinationChapterId: string;
+    version: string;
+  };
 }
 export const isProgressionCreatedEvent = (
   e: NubiaEvent
@@ -34,7 +54,14 @@ export const isProgressionCreatedEvent = (
 
 export interface ProgressionUpdatedEvent extends ProgressionEvent {
   type: ProgressionEventType.PROGRESSION_UPDATED;
-  data: {};
+  data: {
+    id: string;
+    name: string;
+    descriptor: string;
+    sourceChapterId: string;
+    destinationChapterId: string;
+    version: string;
+  };
 }
 export const isProgressionUpdatedEvent = (
   e: NubiaEvent
@@ -50,3 +77,26 @@ export interface GetProgressionEvent extends ProgressionEvent {
 export const isGetProgressionEvent = (
   e: NubiaEvent
 ): e is GetProgressionEvent => e.type === ProgressionEventType.GET_PROGRESSION;
+
+export interface GetProgressionByDestinationChapterIdEvent
+  extends ProgressionEvent {
+  type: ProgressionEventType.GET_PROGRESSION_BY_DESTINATION_CHAPTER_ID;
+  data: {
+    destinationChapterId: string;
+  };
+}
+export const isGetProgressionByDestinationChapterIdEvent = (
+  e: NubiaEvent
+): e is GetProgressionByDestinationChapterIdEvent =>
+  e.type === ProgressionEventType.GET_PROGRESSION_BY_DESTINATION_CHAPTER_ID;
+
+export interface GetProgressionBySourceChapterIdEvent extends ProgressionEvent {
+  type: ProgressionEventType.GET_PROGRESSION_BY_SOURCE_CHAPTER_ID;
+  data: {
+    sourceChapterId: string;
+  };
+}
+export const isGetProgressionBySourceChapterIdEvent = (
+  e: NubiaEvent
+): e is GetProgressionBySourceChapterIdEvent =>
+  e.type === ProgressionEventType.GET_PROGRESSION_BY_SOURCE_CHAPTER_ID;
